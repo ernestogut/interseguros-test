@@ -16,7 +16,7 @@ Este proyecto contiene dos aplicaciones principales: una API en Go (Fiber) y una
 
 ### Fiber (Go)
 
-- **POST** `/login`
+- **POST** `/fiber/login`
 
   **Body ejemplo:**
 
@@ -27,7 +27,7 @@ Este proyecto contiene dos aplicaciones principales: una API en Go (Fiber) y una
   }
   ```
 
-- **POST** `/process`
+- **POST** `/fiber/process`
 
   **Body ejemplo:**
 
@@ -43,7 +43,7 @@ Este proyecto contiene dos aplicaciones principales: una API en Go (Fiber) y una
 
 ### Express (Node.js)
 
-- **POST** `/api/stats`
+- **POST** `/express/stats`
 
   **Body ejemplo:**
 
