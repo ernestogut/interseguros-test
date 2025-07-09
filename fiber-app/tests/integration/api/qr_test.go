@@ -21,7 +21,7 @@ func TestAPIIntegration(t *testing.T) {
 	t.Run("Full QR processing flow", func(t *testing.T) {
 		body := `{"data":[[1,2],[3,4]]}`
 
-		req := httptest.NewRequest("POST", "/process", strings.NewReader(body))
+		req := httptest.NewRequest("POST", "/fiber/process", strings.NewReader(body))
 		req.Header.Set("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIn0.P955zJ1Tdo9WfxqbW0SV_lOFtAYiYC1gFXllqPnVdHQ")
 		req.Header.Set("Content-Type", "application/json")
 
@@ -29,7 +29,6 @@ func TestAPIIntegration(t *testing.T) {
 		assert.NoError(t, err)
 		assert.Equal(t, http.StatusOK, resp.StatusCode)
 
-		// Verificar respuesta
 		var result struct {
 			Q [][]float64 `json:"q"`
 			R [][]float64 `json:"r"`

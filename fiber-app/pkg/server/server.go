@@ -8,7 +8,6 @@ import (
 	"fiber-app/internal/domain/users"
 	"fiber-app/internal/infrastructure/httpclient"
 	"fiber-app/internal/infrastructure/math"
-	"fmt"
 	"os"
 
 	"github.com/gofiber/fiber/v2"
@@ -21,17 +20,16 @@ func NewApp() *fiber.App {
 	matrixAdapter := math.NewRealMatrixAdapter()
 	qrService := qr.NewService(matrixAdapter)
 	nodeJSClient := httpclient.New(os.Getenv("NODE_APP_URL"))
-	// log de os.Getenv("NODE_APP_URL")
-	fmt.Println("NODE_APP_URL:", os.Getenv("NODE_APP_URL"))
 	userService := users.NewService()
 
 	app := fiber.New()
 	// Solo login esta libre
+	routes.SetupHealthCheckRouter(app)
 	routes.SetupUserRouter(app, userService)
 	// Rutas protegidas
 	protected := app.Group("", middleware.ValidateJWTMiddleware)
 	qrHandler := handlers.NewQRHandler(qrService, nodeJSClient)
-	protected.Post("/process", qrHandler.ProcessQR)
+	protected.Post("/fiber/process", qrHandler.ProcessQR)
 	return app
 }
 

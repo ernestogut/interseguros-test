@@ -41,10 +41,10 @@ func (h *QRHandler) ProcessQR(c *fiber.Ctx) error {
 			headers["Authorization"] = token
 		}
 		fmt.Println("Sending stats to Node with headers:", headers)
-		err := h.httpClient.PostWithHeaders("/api/stats", fiber.Map{"q": q, "r": r}, headers, &stats)
+		err := h.httpClient.PostWithHeaders("/stats", fiber.Map{"q": q, "r": r}, headers, &stats)
 		if err != nil {
 			fmt.Println("Error al llamar a Node:", err)
-			stats = nil // o puedes poner un mensaje de error si prefieres
+			stats = nil
 		}
 		fmt.Println("Received stats from Node:", stats)
 	}

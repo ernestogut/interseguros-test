@@ -22,7 +22,6 @@ func (s *Service) Factorize(data [][]float64) (q, r [][]float64, err error) {
 		return nil, nil, ErrEmptyMatrix
 	}
 
-	// Delegar a la infraestructura matemática
 	return s.matrixAdapter.QRFactorize(data)
 }
 

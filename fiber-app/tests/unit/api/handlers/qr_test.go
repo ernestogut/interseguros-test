@@ -30,7 +30,7 @@ func TestQRHandler(t *testing.T) {
 	handler := handlers.NewQRHandler(mockService, nil)
 
 	app := fiber.New()
-	app.Post("/process", handler.ProcessQR)
+	app.Post("/fiber/process", handler.ProcessQR)
 
 	t.Run("Valid request", func(t *testing.T) {
 		mockService.On("Factorize", mock.Anything).Return(
@@ -41,7 +41,7 @@ func TestQRHandler(t *testing.T) {
 
 		req := httptest.NewRequest(
 			"POST",
-			"/process",
+			"/fiber/process",
 			strings.NewReader(`{"data":[[1,2],[3,4]]}`),
 		)
 		req.Header.Set("Content-Type", "application/json")

@@ -26,7 +26,6 @@ func (c *Client) Post(endpoint string, body interface{}, result interface{}) err
 	return json.NewDecoder(resp.Body).Decode(result)
 }
 
-// PostWithHeaders permite enviar una petición POST con headers personalizados
 func (c *Client) PostWithHeaders(endpoint string, body interface{}, headers map[string]string, result interface{}) error {
 	jsonData, _ := json.Marshal(body)
 	req, err := http.NewRequest("POST", c.baseURL+endpoint, bytes.NewBuffer(jsonData))
