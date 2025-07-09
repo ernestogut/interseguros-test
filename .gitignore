@@ -1,0 +1,48 @@
+# Node
+express-app/node_modules/
+express-app/.env
+express-app/.env.*
+express-app/npm-debug.log
+express-app/yarn-debug.log
+express-app/yarn-error.log
+express-app/coverage/
+
+# Go
+fiber-app/bin/
+fiber-app/vendor/
+fiber-app/.env
+fiber-app/.env.*
+fiber-app/coverage.out
+fiber-app/go.sum
+fiber-app/go.mod
+fiber-app/*.test
+fiber-app/.vscode/
+
+# Terraform
+infra/.terraform/
+infra/.terraform.lock.hcl
+infra/terraform.tfstate
+infra/terraform.tfstate.*
+
+# Docker
+**/*.log
+**/.DS_Store
+**/tmp/
+
+# General
+*.swp
+*.swo
+*.bak
+*.tmp
+*.log
+.idea/
+.vscode/
+.env
+.env.*
+
+# Scripts
+scripts/*.log
+
+# Test outputs
+**/test-results/
+**/coverage/

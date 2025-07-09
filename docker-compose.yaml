@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  fiber-app:
+    build: ./fiber-app
+    ports:
+      - "8080:8080"
+    environment:
+      - JWT_SECRET=IntersegurosSecretKey
+      - PORT=8080
+      - NODE_APP_URL=http://express-app:3000
+
+  express-app:
+    build: ./express-app
+    ports:
+      - "3000:3000"
+    environment:
+      - JWT_SECRET=IntersegurosSecretKey
+      - PORT=3000
