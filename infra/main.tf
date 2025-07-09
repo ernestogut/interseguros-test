@@ -35,12 +35,12 @@ resource "aws_ecs_task_definition" "fiber_task" {
         name  = "PORT"
         value = "8080"
       },
-      {
-        name  = "NODE_APP_URL"
-        value = data.aws_secretsmanager_secret.jwt_secret.arn
-      }
     ],
     secrets = [
+      {
+        name      = "NODE_APP_URL"
+        valueFrom = data.aws_secretsmanager_secret.jwt_secret.arn
+      },
       {
         name      = "JWT_SECRET"
         valueFrom = data.aws_secretsmanager_secret.jwt_secret.arn
