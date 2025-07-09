@@ -74,7 +74,7 @@ Este proyecto contiene dos aplicaciones principales: una API en Go (Fiber) y una
 
 1. Clona el repositorio:
    ```bash
-   git clone <url-del-repo>
+   git clone https://github.com/ernestogut/interseguros-test.git
    cd interseguros-test
    ```
 2. Levanta los servicios:
