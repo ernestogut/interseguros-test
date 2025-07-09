@@ -12,6 +12,58 @@ Este proyecto contiene dos aplicaciones principales: una API en Go (Fiber) y una
 
 ---
 
+## Endpoints para Testear
+
+### Fiber (Go)
+
+- **POST** `/login`
+
+  **Body ejemplo:**
+
+  ```json
+  {
+    "username": "admin",
+    "password": "admin"
+  }
+  ```
+
+- **POST** `/process`
+
+  **Body ejemplo:**
+
+  ```json
+  {
+    "data": [
+      [5, 0, 0],
+      [0, 3, 0],
+      [0, 0, 1]
+    ]
+  }
+  ```
+
+### Express (Node.js)
+
+- **POST** `/api/stats`
+
+  **Body ejemplo:**
+
+  ```json
+  {
+    "q": [
+      [1, 0, 0],
+      [0, 1, 0],
+      [0, 0, 1]
+    ],
+    "r": [
+      [5, 0, 0],
+      [0, 3, 0],
+      [0, 0, 1]
+    ]
+  }
+  ```
+
+---
+
 ## Levantar el Proyecto en Local con Docker
 
 ### Requisitos
