@@ -8,15 +8,16 @@ require('dotenv').config();
 
 const app = express();
 
-// Middlewares globales
 app.use(cors());
 app.use(express.json());
-app.use(morgan('dev')); // Logging de requests
+app.use(morgan('dev'));
 
+app.get('/express/health', (req, res) => {
+  res.status(200).send('OK');
+});
 
-app.use('/api', authenticateJWT, routes);
+app.use('/express', authenticateJWT, routes);
 
-// Manejador de errores centralizado
 app.use(errorHandler);
 
 module.exports = app;

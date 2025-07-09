@@ -21,19 +21,18 @@ exports.computeMatrixStats = (q, r) => {
   };
 };
 
-// Helper: Aplana matriz 2D a array 1D
 const flattenMatrix = (matrix) => matrix.flat();
 
-// Helper: Calcula promedio
+// Calcula promedio
 const calculateAverage = (values) => {
   const sum = values.reduce((acc, val) => acc + val, 0);
   return sum / values.length;
 };
 
-// Helper: Calcula suma total
+// Calcula suma total
 const calculateSum = (values) => values.reduce((acc, val) => acc + val, 0);
 
-// Helper: Verifica si matriz es diagonal
+// Verifica si matriz es diagonal
 const isDiagonalMatrix = (matrix) => {
   for (let i = 0; i < matrix.length; i++) {
     for (let j = 0; j < matrix[i].length; j++) {

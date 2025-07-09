@@ -7,7 +7,7 @@ app.use(express.json());
 app.use('/api', matrixRoutes);
 
 describe('MatrixRoutes', () => {
-  describe('POST /api/stats', () => {
+  describe('POST /express/stats', () => {
     it('should return 200 and calculated statistics for valid input', async () => {
       const response = await request(app)
         .post('/api/stats')
@@ -17,7 +17,6 @@ describe('MatrixRoutes', () => {
         });
 
       expect(response.status).toBe(200);
-      // Add more assertions based on the expected response structure
     });
 
     it('should return 400 for invalid input', async () => {
@@ -29,7 +28,6 @@ describe('MatrixRoutes', () => {
         });
 
       expect(response.status).toBe(500);
-      // Add more assertions based on the expected error response
     });
   });
 });
