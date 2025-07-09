@@ -130,7 +130,7 @@ Este proyecto contiene dos aplicaciones principales: una API en Go (Fiber) y una
 
 - Asegúrate de tener configuradas tus credenciales de AWS antes de aplicar Terraform.
 - El despliegue creará VPC, subredes, gateway, security groups, etc.
-- Asegurate de tener los secretos necesarios en AWS Secrets Manager, especialmente `jwt-secret` con los valores para `JWT_SECRET` y `NODE_APP_URL`.
+- Asegurate de tener los secretos necesarios en AWS Secrets Manager, especialmente `jwt-secret` con los valores para `JWT_SECRET`.
 
 ---
 
